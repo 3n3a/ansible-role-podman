@@ -1,9 +1,9 @@
 ---
 # prometheus
-- name: Ensure auto update timer file is present
+- name: Ensure prometheus exporter is present
   template:
-    src: podman-auto-update-timer-override.conf.j2
-    dest: "/etc/systemd/system/podman-auto-update.timer.d/podman-auto-update-timer-override.conf"
+    src: podman-prometheus-exporter.container.j2
+    dest: "{{ podman_quadlet_path }}/podman-prometheus-exporter.container"
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
     mode: '0644'
@@ -20,4 +20,4 @@
     scope: "{{ podman_systemd_scope }}"
   loop:
   - "podman.socket"
-  - "prometheus-podman-exporter.service"
+  - "podman-prometheus-exporter.service"

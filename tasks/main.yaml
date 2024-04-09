@@ -15,7 +15,7 @@
     name:
     - podman
     - python3-cryptography
-    state: {{ podman_package_state }}
+    state: "{{ podman_package_state }}"
 
 - include_tasks: setup-quadlet.yaml
   when: podman_add_quadlet | bool
