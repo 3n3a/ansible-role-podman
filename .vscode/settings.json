@@ -1,0 +1,8 @@
+{
+    "ansible.python.interpreterPath": "/bin/python",
+    "files.associations": {
+        "inventory.yml": "yaml",
+        "requirement.yml": "yaml",
+        "*.yml": "ansible",
+    }
+}

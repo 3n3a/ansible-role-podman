@@ -1,0 +1,18 @@
+---
+# todo add comments
+podman_package_state: present
+podman_systemd_scope: system # or: user
+
+# quadlets
+podman_add_quadlet: false
+podman_quadlet_path: '/etc/containers/systemd' # or: ~/.config/containers/systemd/
+
+# auto update
+podman_add_auto_update: false
+# options: https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html#
+podman_auto_update_on_calendar: daily
+
+# prometheus
+podman_add_prometheus: false
+podman_prometheus_port: 9882
+podman_prometheus_image: 'quay.io/navidys/prometheus-podman-exporter:latest'

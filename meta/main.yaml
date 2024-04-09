@@ -1,0 +1,22 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: podman
+  author: 3n3a
+  description: Podman installation for CentOS based systems (Fedora, RHEL).
+  company: "3n3a IT"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.10
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+    - name: CentOS
+      versions:
+        - all
+  galaxy_tags:
+    - development
+    - podman
+    - containers
+    - redhat

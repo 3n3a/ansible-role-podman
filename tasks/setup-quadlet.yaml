@@ -1,0 +1,9 @@
+---
+# quadlets
+- name: Ensure quadlet directory is present
+  ansible.builtin.file:
+    path: "{{ podman_quadlet_path }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: "0755"

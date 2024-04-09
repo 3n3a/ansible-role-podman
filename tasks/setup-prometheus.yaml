@@ -1,0 +1,23 @@
+---
+# prometheus
+- name: Ensure auto update timer file is present
+  template:
+    src: podman-auto-update-timer-override.conf.j2
+    dest: "/etc/systemd/system/podman-auto-update.timer.d/podman-auto-update-timer-override.conf"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0644'
+    force: true
+  notify: reload daemon
+
+- meta: flush_handlers
+
+- name: Ensure All Systemd Services are running
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    state: started
+    enabled: true
+    scope: "{{ podman_systemd_scope }}"
+  loop:
+  - "podman.socket"
+  - "prometheus-podman-exporter.service"
