@@ -39,3 +39,17 @@ roles:
     version: master
     scm: git
 ```
+
+## options
+
+| option | default | description |
+| --- | --- | --- |
+| `podman_package_state` | present | state that packages (podman, python3-cryptography) will have when running this role |
+| `podman_systemd_scope` | system | can only be system right now. user mode is untested and buggy in podman. |
+| `podman_add_quadlet` | false | add quadlet directory |
+| `podman_quadlet_path` | /etc/containers/systemd | directory where quadlets will be saved to and expected at. depends on systemd_scope |
+| `podman_add_auto_update` | false | add auto-update trigger for podman |
+| `podman_auto_update_on_calendar` | daily | auto-update daily at 00:00. [documentation of options](https://www.freedesktop.org/software/systemd/man/latest/systemd.time.html) |
+| `podman_add_prometheus` | false | setup podman prometheus exporter |
+| `podman_prometheus_port` | 9882 | port on which prometheus metrics are available |
+| `podman_prometheus_image` | quay.io/navidys/prometheus-podman-exporter:latest | image which is setup with add_prometheus |
