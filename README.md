@@ -26,3 +26,16 @@ podman_add_auto_update: true
 # creates quadlet that exports podman prometheus metrics, default port 9882
 podman_add_prometheus: true
 ```
+
+### install directly from here
+
+add the following to your `requirements.yml`
+
+```yaml
+---
+roles:
+  - name: 3n3a.podman
+    src: git+ssh://git@github.com:22/3n3a/ansible-role-podman.git
+    version: master
+    scm: git
+```
