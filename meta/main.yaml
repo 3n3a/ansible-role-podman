@@ -1,6 +1,3 @@
----
-dependencies: []
-
 galaxy_info:
   role_name: podman
   author: 3n3a
@@ -20,3 +17,5 @@ galaxy_info:
     - podman
     - containers
     - redhat
+
+dependencies: []
