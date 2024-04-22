@@ -2,4 +2,5 @@
 - name: reload daemon
   ansible.builtin.systemd:
     daemon_reload: true
+    force: true
     scope: "{{ podman_systemd_scope }}"
